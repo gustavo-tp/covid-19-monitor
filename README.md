@@ -1,5 +1,5 @@
 <h1 align="center">
-  COVID-19 Monitor
+    <img alt="Aircnc" title="#fiqueemcasa" src=".github/logo.png" width="250px" />
 </h1>
 
 <p align="center">
