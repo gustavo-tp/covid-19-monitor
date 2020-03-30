@@ -16,9 +16,9 @@ function OutbreakInfo({ outbreakData }) {
   }, [outbreakData]);
 
   async function loadSummary() {
-    const { cases, recovered, deaths, updated } = outbreakData;
+    const { active, recovered, deaths, updated } = outbreakData;
 
-    setData([cases, recovered, deaths]);
+    setData([active, recovered, deaths]);
 
     if (updated) {
       const date = new Date(updated);

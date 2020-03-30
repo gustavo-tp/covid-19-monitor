@@ -8,7 +8,7 @@ const formatNumber = num =>
 
 function Panel({ data }) {
   const colors = ['#ffa500', '#008000', '#ff0000'];
-  const occasions = ['Cases', 'Recovered', 'Deaths'];
+  const occasions = ['Active', 'Recovered', 'Deaths'];
 
   const amount = data.reduce((total, value) => total + value, 0);
 

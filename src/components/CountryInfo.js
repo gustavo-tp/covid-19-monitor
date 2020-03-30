@@ -6,8 +6,8 @@ import PieChart from '../assets/pie-chart.svg';
 import LineChart from '../assets/line-chart.svg';
 
 function CountryInfo({ countryData }) {
-  const { cases, recovered, deaths } = countryData;
-  const amount = cases + recovered + deaths;
+  const { active, cases, recovered, deaths } = countryData;
+  const amount = active + recovered + deaths;
 
   const navigation = useNavigation();
 
@@ -55,7 +55,7 @@ function CountryInfo({ countryData }) {
           style={{
             backgroundColor: '#ffa500',
             height: 1,
-            flex: amount ? cases / amount : 0.001
+            flex: amount ? active / amount : 0.001
           }}
         ></View>
         <View

@@ -148,7 +148,7 @@ function AxesChart() {
         )}
       </View>
       <Panel
-        data={[countryData.cases, countryData.recovered, countryData.deaths]}
+        data={[countryData.active, countryData.recovered, countryData.deaths]}
       />
     </>
   );
