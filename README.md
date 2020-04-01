@@ -3,16 +3,16 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gustavo-tp/dev-radar.svg">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gustavo-tp/covid-19-monitor.svg">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gustavo-tp/dev-radar.svg">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gustavo-tp/covid-19-monitor.svg">
   
   <a href="https://github.com/Rocketseat/semana-omnistack-9/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gustavo-tp/dev-radar.svg">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gustavo-tp/covid-19-monitor.svg">
   </a>
 
   <a href="https://github.com/Rocketseat/semana-omnistack-9/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/gustavo-tp/dev-radar.svg">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/gustavo-tp/covid-19-monitor.svg">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
