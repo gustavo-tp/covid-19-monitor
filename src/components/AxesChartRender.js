@@ -7,7 +7,7 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 import api from '../services/api';
@@ -33,7 +33,7 @@ function AxesChart() {
   async function loadData() {
     try {
       setLoading(true);
-      const response = await api.get(`/v2/historical/${countryData.country}`);
+      const response = await api.get(`/historical/${countryData.country}`);
 
       const { cases, deaths } = response.data.timeline;
 
@@ -42,7 +42,7 @@ function AxesChart() {
 
       setCasesValues(casesValues);
       setDates(
-        Object.keys(cases).map(date => {
+        Object.keys(cases).map((date) => {
           const dateArray = date.split('/');
 
           const month = ('0' + dateArray[0]).slice(-2);
@@ -55,12 +55,12 @@ function AxesChart() {
       setData([
         {
           data: deathsValues,
-          svg: { stroke: 'red' }
+          svg: { stroke: 'red' },
         },
         {
           data: casesValues,
-          svg: { stroke: 'orange' }
-        }
+          svg: { stroke: 'orange' },
+        },
       ]);
 
       setDateOffset(Math.floor(casesValues.length / 8));
@@ -81,7 +81,7 @@ function AxesChart() {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('WebViewRender', {
-              url: 'https://github.com/NOVELCOVID/API'
+              url: 'https://github.com/NOVELCOVID/API',
             });
           }}
         >
@@ -131,17 +131,20 @@ function AxesChart() {
                 <Grid />
               </LineChart>
               <XAxis
-                style={{ marginHorizontal: -10, height: xAxisHeight }}
+                style={{
+                  marginHorizontal: -10,
+                  height: xAxisHeight,
+                }}
                 data={casesValues}
                 formatLabel={(value, index) => {
-                  if (dateOffset && (index + 7) % dateOffset === 0) {
+                  if (dateOffset && index % dateOffset === 0) {
                     return dates[index];
                   }
 
                   return '';
                 }}
                 contentInset={{ left: 10, right: 10 }}
-                svg={axesSvg}
+                svg={{ ...axesSvg, rotation: -30, translateY: 10 }}
               />
             </View>
           </>
@@ -157,29 +160,29 @@ function AxesChart() {
 const styles = StyleSheet.create({
   countryInfo: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   countryFlag: {
     width: 35,
     height: 35,
     resizeMode: 'center',
-    marginRight: 10
+    marginRight: 10,
   },
   countryName: {
     fontSize: 18,
     color: '#FFF',
-    lineHeight: 35
+    lineHeight: 35,
   },
   dataSourceDetails: {
     fontSize: 15,
     color: '#48C9B0',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   dataSourceReferenceLink: {
     fontSize: 15,
     color: '#52BE80',
     textAlign: 'center',
-    marginBottom: 10
+    marginBottom: 10,
   },
   minPanel: {
     height: 60,
@@ -187,29 +190,29 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   value: {
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   text: {
     color: '#FFF',
     fontSize: 14,
     textAlign: 'center',
-    marginRight: 10
+    marginRight: 10,
   },
   row: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   lineCharContainer: {
     height: 200,
     padding: 10,
     flexDirection: 'row',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 export default React.memo(AxesChart);
